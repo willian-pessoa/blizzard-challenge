@@ -1,0 +1,22 @@
+.navbar {
+  width: 100%;
+  padding: 1.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .wrapper-logo-menu {
+    display: flex;
+
+    .navbar__logo {
+      margin-right: 1rem;
+    }
+
+    .navbar__menu {
+      display: flex;
+    }
+  }
+
+  .navbar__auth {
+  }
+}
