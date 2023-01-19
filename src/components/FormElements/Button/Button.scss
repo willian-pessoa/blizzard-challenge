@@ -1,0 +1,31 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 3.15385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0px 5px;
+}
+
+.button--default {
+  background: #00aeff;
+  color: white;
+  border: 1px solid #00aeff;
+}
+
+.button--default:hover {
+  background-color: #00aeff79;
+  border: 1px solid #00aeff59;
+}
+
+.button--outline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.button--outline:hover{
+  background-color: white;
+  color: black;
+}

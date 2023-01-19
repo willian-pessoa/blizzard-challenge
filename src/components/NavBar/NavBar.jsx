@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Button from "../FormElements/Button/Button";
+import {
+  RiArrowDropDownLine,
+  RiArrowDropUpLine,
+  RiUser3Line,
+} from "react-icons/ri";
 
 import "./NavBar.scss";
 
 const NavBar = () => {
+  const [jogosDropMenu, setJogosDropMenu] = useState(false);
+  const [esportesDropMenu, setEsportesDropMenu] = useState(false);
+
+  const handleDropDown = (section) => {
+    switch (section) {
+      case "jogos":
+        setJogosDropMenu((prev) => !prev);
+        setEsportesDropMenu(false);
+        break;
+      case "esportes":
+        setEsportesDropMenu((prev) => !prev);
+        setJogosDropMenu(false);
+        break;
+      default:
+        setJogosDropMenu(false);
+        setEsportesDropMenu(false);
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="wrapper-logo-menu">
@@ -12,16 +36,39 @@ const NavBar = () => {
           <img src="assets/logo-blizzard.png" alt="logo" />
         </div>
         <ul className="navbar__menu">
-          <li className="navbar_menu_item">Jogos</li>
-          <li className="navbar_menu_item">Esportes</li>
-          <li className="navbar_menu_item">Loja</li>
-          <li className="navbar_menu_item">Notícias</li>
-          <li className="navbar_menu_item">Suporte</li>
+          <li
+            onClick={() => handleDropDown("jogos")}
+            className="navbar__menu__item center"
+          >
+            Jogos{" "}
+            {!jogosDropMenu ? (
+              <RiArrowDropDownLine size={25} />
+            ) : (
+              <RiArrowDropUpLine color="#00AEFF" size={25} />
+            )}
+          </li>
+          <li
+            onClick={() => handleDropDown("esportes")}
+            className="navbar__menu__item center"
+          >
+            Esportes{" "}
+            {!esportesDropMenu ? (
+              <RiArrowDropDownLine size={25} />
+            ) : (
+              <RiArrowDropUpLine color="#00AEFF" size={25} />
+            )}
+          </li>
+          <li className="navbar__menu__item">Loja</li>
+          <li className="navbar__menu__item">Notícias</li>
+          <li className="navbar__menu__item">Suporte</li>
         </ul>
       </div>
       <div className="navbar__auth">
-        <Button>Criar Conta</Button>
-        <Button>Logar</Button>
+        <Button variant="outline">Criar Conta</Button>
+        <Button>
+          <RiUser3Line />
+          &nbsp;Logar
+        </Button>
       </div>
     </nav>
   );

@@ -1,3 +1,3 @@
-# Blizzard Land Page by BR Challenges
+# Blizzard Land Page (Front-End Challenge)
 
 
