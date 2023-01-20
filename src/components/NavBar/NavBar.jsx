@@ -5,6 +5,7 @@ import {
   RiArrowDropDownLine,
   RiArrowDropUpLine,
   RiUser3Line,
+  RiMenuFill,
 } from "react-icons/ri";
 
 import "./NavBar.scss";
@@ -70,6 +71,7 @@ const NavBar = () => {
           &nbsp;Logar
         </Button>
       </div>
+        <RiMenuFill className="navbar__menu__hamburguer" size={40} />
     </nav>
   );
 };

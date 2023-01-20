@@ -1,19 +1,11 @@
 * {
   box-sizing: border-box;
   font-family: "Poppins";
-}
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  display: block;
+  margin:0;
+  padding:0;
+  overflow: hidden;
 }
 
 ul {
   list-style: none;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

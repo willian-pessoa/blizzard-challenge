@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Button from "../FormElements/Button/Button";
 
@@ -40,60 +40,98 @@ const LATERALBAR = [
   {
     id: "diablo",
     icon: "assets/banner-hero/icons/game-1.png",
+    active: true,
   },
   {
     id: "hearthstone",
     icon: "assets/banner-hero/icons/game-2.png",
+    active: false,
   },
   {
     id: "wow",
     icon: "assets/banner-hero/icons/game-3.png",
+    active: false,
   },
   {
     id: "diablo-old",
     icon: "assets/banner-hero/icons/game-4.png",
+    active: false,
   },
   {
     id: "starcraft",
     icon: "assets/banner-hero/icons/game-5.png",
+    active: false,
   },
 ];
 
 // COMPONENTS
 const BannerHero = () => {
+  const [currentBanner, setCurrentBanner] = useState(BANNERS[0]);
+
+  const handleCurrentBanner = (newBanner) => {
+    switch (newBanner) {
+      case "diablo":
+        setCurrentBanner(BANNERS[0]);
+        break;
+      case "hearthstone":
+        setCurrentBanner(BANNERS[1]);
+        break;
+      case "wow":
+        setCurrentBanner(BANNERS[2]);
+        break;
+      default:
+        setCurrentBanner(BANNERS[0]);
+    }
+  };
+
   return (
     <div
       className="banner"
-      style={{ backgroundImage: `url(${BANNERS[0].background})` }}
+      style={{ backgroundImage: `url(${currentBanner.background})` }}
     >
       <div className="wrapper-left-center">
         <div className="banner__left center">
-          <LateralBar />
+          <LateralBar handleCurrentBanner={handleCurrentBanner} />
         </div>
         <div className="banner__center">
-          <h1>{BANNERS[0].title}</h1>
-          <p>{BANNERS[0].description}</p>
+          <h1>{currentBanner.title}</h1>
+          <p>{currentBanner.description}</p>
           <div className="banner__center__button">
             <Button>Jogue Agora</Button>
           </div>
         </div>
       </div>
       <div className="banner__right">
-        <img src={BANNERS[0].logo} alt="logo" />
+        <img src={currentBanner.logo} alt="logo" />
         <div className="banner__right__trailer">
           <h6>ASSITA O TRAILER</h6>
-          <img src={BANNERS[0].animationCover} alt="" />
+          <img src={currentBanner.animationCover} alt="" />
         </div>
       </div>
     </div>
   );
 };
 
-const LateralBar = () => {
+const LateralBar = ({ handleCurrentBanner }) => {
+  const [currentIcon, setCurrentIcon] = useState("diablo");
+
+  const handleCurrentIcon = (gameId) => {
+    setCurrentIcon(gameId);
+    handleCurrentBanner(gameId);
+  };
+
   return (
     <div className="lateralBar">
       {LATERALBAR.map((game, idx) => {
-        return <img key={idx} src={game.icon} alt={game.id} />;
+        return (
+          <img
+            onClick={() => handleCurrentIcon(game.id)}
+            className={game.id !== currentIcon ? "blackwhite" : "default"}
+            key={idx}
+            src={game.icon}
+            alt={game.id}
+          />
+        );
       })}
     </div>
   );

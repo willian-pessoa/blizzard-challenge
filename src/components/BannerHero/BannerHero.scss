@@ -43,9 +43,10 @@
   .banner__right {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 280px;
+    justify-content: space-around;
+    width: 240px;
     text-align: right;
+    margin-top: 60px;
 
     .banner__right__trailer {
       width: 100%;
@@ -65,5 +66,61 @@
 
   img {
     margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .blackwhite {
+    filter: grayscale(100%);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .banner {
+    justify-content: center;
+
+    .wrapper-left-center {
+      flex-direction: column-reverse;
+      max-width: 400px;
+
+      .banner__center {
+        width: 300px;
+
+        h1 {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .banner__right {
+      width: 200px;
+    }
+
+    .lateralBar {
+      margin-top: 60px;
+      margin-right: 40px;
+      flex-direction: row;
+
+      img {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .banner{
+    padding: 0.5rem;
+
+    .wrapper-left-center{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .banner__right {
+      height: 0;
+      width: 0;
+      display: none;
+      visibility: hidden;
+    }
   }
 }
