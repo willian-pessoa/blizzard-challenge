@@ -24,19 +24,19 @@
       margin: 0 10px 0 0;
     }
 
-    p{
+    p {
       display: flex;
       align-items: center;
       color: #828792;
     }
 
-    .p__mobile{
+    .p__mobile {
       color: white;
       font-size: 0.8rem;
       width: 70%;
     }
 
-    button{
+    button {
       width: 14rem;
       height: 3rem;
     }
@@ -69,5 +69,19 @@
       align-self: flex-end;
       bottom: 0;
     }
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .footer__left{
+    min-width: 300px !important;
+    padding-left: 2rem !important;
+  }
+
+  .footer__right {
+    height: 0;
+    width: 0;
+    display: none;
+    visibility: hidden;
   }
 }
