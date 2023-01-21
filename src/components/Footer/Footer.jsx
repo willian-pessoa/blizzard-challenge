@@ -5,9 +5,21 @@ import Button from "../FormElements/Button/Button";
 import { RiAppleFill, RiWindowsFill } from "react-icons/ri";
 import { FaLinux } from "react-icons/fa";
 
+import { getOS } from "../../utils/getOs";
+
 import "./Footer.scss";
 
 const Footer = () => {
+  const OSName = getOS();
+  const OSIcon =
+    OSName[0] === "M" ? (
+      <RiAppleFill size="20" />
+    ) : OSName[0] === "L" ? (
+      <FaLinux size="20" />
+    ) : (
+      <RiWindowsFill size="20" />
+    );
+
   return (
     <footer
       style={{ backgroundImage: `url(assets/footer-background.png)` }}
@@ -29,12 +41,14 @@ const Footer = () => {
           Compre jogos e itens digitais
         </p>
         <Button>
-          <RiAppleFill size="20" />
-          &nbsp; Baixar para o MacOS
+          {OSIcon}
+          &nbsp; Baixar para o {OSName}
         </Button>
         <p className="p__mobile">
-          <img src="assets/mobile-icon.svg" alt="mobile-icon" /> Também
-          disponível como aplicativo móvel
+          <img src="assets/mobile-icon.svg" alt="mobile-icon" />{" "}
+          <span>
+            Também disponível como <u> aplicativo móvel</u>
+          </span>
         </p>
       </div>
       <div className="footer__right">

@@ -13,6 +13,7 @@
   .footer__left {
     flex: 3;
     min-width: 350px;
+    max-width: 350px;
     padding-left: 4rem;
     vertical-align: middle;
 
@@ -34,10 +35,14 @@
       color: white;
       font-size: 0.8rem;
       width: 70%;
+
+      u {
+        cursor: pointer;
+      }
     }
 
     button {
-      width: 14rem;
+      width: 16rem;
       height: 3rem;
     }
   }
@@ -73,7 +78,7 @@
 }
 
 @media screen and (max-width: 610px) {
-  .footer__left{
+  .footer__left {
     min-width: 300px !important;
     padding-left: 2rem !important;
   }
