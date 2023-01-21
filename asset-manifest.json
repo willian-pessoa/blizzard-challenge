@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blizzard-challenge/static/css/main.26219148.css",
+    "main.js": "/blizzard-challenge/static/js/main.7f9e3edf.js",
+    "index.html": "/blizzard-challenge/index.html",
+    "main.26219148.css.map": "/blizzard-challenge/static/css/main.26219148.css.map",
+    "main.7f9e3edf.js.map": "/blizzard-challenge/static/js/main.7f9e3edf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26219148.css",
+    "static/js/main.7f9e3edf.js"
+  ]
+}
