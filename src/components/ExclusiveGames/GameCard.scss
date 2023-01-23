@@ -1,0 +1,38 @@
+.game-card {
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+  margin: 0 1rem 2.5rem 1rem;
+  position: relative;
+  cursor: pointer;
+
+  h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 27px;
+    color: #e5e5e5;
+    margin-top: 14px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 21px;
+    color: #e5e5e5;
+    opacity: 0.8;
+  }
+
+  .game-card__img-logo {
+    position: relative;
+
+    .game-card__img {
+      border-radius: 4px;
+    }
+
+    .game-card__logo {
+      position: absolute;
+      bottom: 10%;
+      left: 15%;
+    }
+  }
+}

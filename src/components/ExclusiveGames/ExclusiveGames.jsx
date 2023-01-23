@@ -1,8 +1,15 @@
 import React from "react";
+import useFetch from "../../hooks/useFetch";
+
+import GameCard from "./GameCard";
 
 import "./ExclusiveGames.scss";
 
 const ExclusiveGames = () => {
+  const { data: games, loaded } = useFetch(
+    "https://api.brchallenges.com/api/blizzard/games"
+  );
+
   return (
     <main className="exclusive-games">
       <div className="exclusive-games__header">
@@ -19,7 +26,21 @@ const ExclusiveGames = () => {
           Ver todos os jogos
         </p>
       </div>
-      <div className="exclusive-games__body"></div>
+      <div className="exclusive-games__body">
+        {loaded &&
+          games.map((game, idx) => {
+            const { name, category, image, logo } = game;
+            return (
+              <GameCard
+                key={idx}
+                name={name}
+                category={category}
+                image={image}
+                logo={logo}
+              />
+            );
+          })}
+      </div>
     </main>
   );
 };
