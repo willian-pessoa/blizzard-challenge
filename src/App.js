@@ -3,6 +3,7 @@ import './App.scss';
 import NavBar from './components/NavBar/NavBar';
 import BannerHero from './components/BannerHero/BannerHero';
 import Footer from './components/Footer/Footer';
+import ExclusiveGames from './components/ExclusiveGames/ExclusiveGames';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <NavBar />
         <BannerHero />
       </header>
-      <main></main>
+      <ExclusiveGames />
       <Footer />
     </div>
   );
