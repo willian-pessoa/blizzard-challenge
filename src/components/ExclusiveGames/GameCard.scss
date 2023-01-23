@@ -24,15 +24,40 @@
 
   .game-card__img-logo {
     position: relative;
+    overflow: hidden;
 
     .game-card__img {
       border-radius: 4px;
+      transition: all 0.7s ease;
     }
 
     .game-card__logo {
       position: absolute;
+      width: 130px;
       bottom: 10%;
-      left: 15%;
+      left: 23%;
+    }
+  }
+}
+
+.game-card:hover {
+  .game-card__img {
+    transform: scale(1.4) rotate(5deg);
+  }
+}
+
+@media screen and (max-width: 622px) {
+  .game-card {
+    width: 9rem;
+    margin: 0 0.5rem 2.5rem 0.5rem;
+
+    .game-card__img-logo {
+      .game-card__logo {
+        position: absolute;
+        width: 90px;
+        bottom: 10%;
+        left: 20%;
+      }
     }
   }
 }

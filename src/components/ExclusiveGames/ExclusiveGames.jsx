@@ -2,6 +2,7 @@ import React from "react";
 import useFetch from "../../hooks/useFetch";
 
 import GameCard from "./GameCard";
+import BlizzardCard from "./BlizzardCard";
 
 import "./ExclusiveGames.scss";
 
@@ -40,6 +41,7 @@ const ExclusiveGames = () => {
               />
             );
           })}
+        <BlizzardCard/>
       </div>
     </main>
   );

@@ -2,7 +2,8 @@ import React from "react";
 
 import "./GameCard.scss";
 
-const GameCard = ({ name, category, image, logo }) => {
+const GameCard = ({ name, category, image, logo}) => {
+
   return (
     <div className="game-card">
       <div className="game-card__img-logo">

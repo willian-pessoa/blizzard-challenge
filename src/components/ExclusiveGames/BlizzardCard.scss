@@ -1,0 +1,32 @@
+.blizzard-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 308px;
+  margin: 0 1rem 2.5rem 1rem;
+  cursor: pointer;
+  border: 0.5px solid grey;
+
+  p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    align-self: center;
+    margin-top: 30px;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 622px){
+  .blizzard-card{
+    width: 9rem;
+    height: 198px;
+    margin: 0 0.5rem 2.5rem 0.5rem;
+  }
+}
