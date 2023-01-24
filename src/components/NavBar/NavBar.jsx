@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Modal from "../Modal/Modal";
 import Button from "../FormElements/Button/Button";
 import {
   RiArrowDropDownLine,
@@ -13,6 +14,7 @@ import "./NavBar.scss";
 const NavBar = () => {
   const [jogosDropMenu, setJogosDropMenu] = useState(false);
   const [esportesDropMenu, setEsportesDropMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleDropDown = (section) => {
     switch (section) {
@@ -66,12 +68,13 @@ const NavBar = () => {
       </div>
       <div className="navbar__auth">
         <Button variant="outline">Criar Conta</Button>
-        <Button>
+        <Button onClick={() => setShowModal(true)}>
           <RiUser3Line />
           &nbsp;Logar
         </Button>
+        {showModal && <Modal setShow={setShowModal} />}
       </div>
-        <RiMenuFill className="navbar__menu__hamburguer" size={40} />
+      <RiMenuFill className="navbar__menu__hamburguer" size={40} />
     </nav>
   );
 };

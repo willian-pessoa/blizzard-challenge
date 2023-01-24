@@ -67,6 +67,7 @@ const LATERALBAR = [
 // COMPONENTS
 const BannerHero = () => {
   const [currentBanner, setCurrentBanner] = useState(BANNERS[0]);
+  const [showAnimation, setShowAnimation] = useState(false);
 
   const handleCurrentBanner = (newBanner) => {
     switch (newBanner) {
@@ -103,9 +104,18 @@ const BannerHero = () => {
       </div>
       <div className="banner__right">
         <img src={currentBanner.logo} alt="logo" />
-        <div className="banner__right__trailer">
+        <div  onMouseEnter={() => setShowAnimation(true)}
+            onMouseLeave={() => setShowAnimation(false)} className="banner__right__trailer">
           <h6>ASSITA O TRAILER</h6>
-          <img src={currentBanner.animationCover} alt="" />
+          <img
+            src={
+              showAnimation
+                ? currentBanner.animation
+                : currentBanner.animationCover
+            }
+            alt=""
+          />
+          <img className="play-button" src="assets/play-button.png" alt="" />
         </div>
       </div>
     </div>
