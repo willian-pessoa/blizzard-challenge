@@ -14,7 +14,7 @@ import "./NavBar.scss";
 const NavBar = () => {
   const [jogosDropMenu, setJogosDropMenu] = useState(false);
   const [esportesDropMenu, setEsportesDropMenu] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(!false);
 
   const handleDropDown = (section) => {
     switch (section) {
