@@ -57,6 +57,7 @@
     width: 0;
     display: none;
     visibility: hidden;
+    cursor: pointer;
   }
 }
 
@@ -71,13 +72,34 @@
     width: auto !important;
     display: block !important;
     visibility: visible !important;
+    z-index: 6;
+  }
+
+  .lateral-menu{
+    width: 70vw ;
+    height: 100vh ;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: black;
+    visibility: visible;
+    transition: all 0.7s ease;
+    flex-direction: column;
+    justify-content: center !important;
+
+    li{
+      text-align: left;
+      width: 30%;
+      justify-content: start;
+      margin: 10px 0;
+    }
   }
 }
 
 @media screen and (max-width: 610px) {
   .navbar {
     padding: 1.5rem;
-    overflow: hidden;
   }
 
   .navbar__auth {

@@ -12,9 +12,10 @@ import {
 import "./NavBar.scss";
 
 const NavBar = () => {
-  const [jogosDropMenu, setJogosDropMenu] = useState(false);
+  const [jogosDropMenu, setJogosDropMenu] = useState(!false);
   const [esportesDropMenu, setEsportesDropMenu] = useState(false);
-  const [showModal, setShowModal] = useState(!false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleDropDown = (section) => {
     switch (section) {
@@ -38,7 +39,7 @@ const NavBar = () => {
         <div className="navbar__logo">
           <img src="assets/logo-blizzard.png" alt="logo" />
         </div>
-        <ul className="navbar__menu">
+        <ul className={`navbar__menu ${showMenu && "lateral-menu"}`}>
           <li
             onClick={() => handleDropDown("jogos")}
             className="navbar__menu__item center"
@@ -67,14 +68,20 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar__auth">
-        <Button variant="outline">Criar Conta</Button>
+        <Button onClick={() => setShowModal(true)} variant="outline">
+          Criar Conta
+        </Button>
         <Button onClick={() => setShowModal(true)}>
           <RiUser3Line />
           &nbsp;Logar
         </Button>
         {showModal && <Modal setShow={setShowModal} />}
       </div>
-      <RiMenuFill className="navbar__menu__hamburguer" size={40} />
+      <RiMenuFill
+        onClick={() => setShowMenu((prev) => !prev)}
+        className="navbar__menu__hamburguer"
+        size={40}
+      />
     </nav>
   );
 };
