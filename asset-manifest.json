@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.38459f1e.css",
+    "main.css": "./static/css/main.1662ed0e.css",
     "main.js": "./static/js/main.66c0285a.js",
     "static/media/modal-background.png": "./static/media/modal-background.7b38df9c02d0acedd270.png",
     "index.html": "./index.html",
-    "main.38459f1e.css.map": "./static/css/main.38459f1e.css.map",
+    "main.1662ed0e.css.map": "./static/css/main.1662ed0e.css.map",
     "main.66c0285a.js.map": "./static/js/main.66c0285a.js.map"
   },
   "entrypoints": [
-    "static/css/main.38459f1e.css",
+    "static/css/main.1662ed0e.css",
     "static/js/main.66c0285a.js"
   ]
 }
