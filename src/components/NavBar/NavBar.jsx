@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Dropdown from "./Dropdown";
 import DropdownGames from "./DropdownGames";
+import DropdownEsportes from "./DropdownEsportes";
 import Modal from "../Modal/Modal";
 import Button from "../FormElements/Button/Button";
 import {
@@ -97,6 +98,9 @@ const NavBar = () => {
       </nav>
       <Dropdown active={jogosDropMenu}>
         <DropdownGames />
+      </Dropdown>
+      <Dropdown active={esportesDropMenu}>
+        <DropdownEsportes />
       </Dropdown>
     </>
   );
